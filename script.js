@@ -1,7 +1,7 @@
 var userFormEl = document.querySelector('#user-form');
-var nameInputEl = document.querySelector('#username');
-var forcastEl = document.querySelector('#repcontainer');
-var searchTerm = document.querySelector('#repo-search-term');
+var cityInputEl = document.querySelector('#search');
+var forcastEl = document.querySelector('#forcast');
+//var locationSearchTerm = document.querySelector('#location');
 
 
 
@@ -13,20 +13,18 @@ let humidity = document.getElementById("humidity");
 let windSpeed = document.getElementById("wind-speed")
 let uv = document.getElementById("uv")
 let climate = document.getElementById("climate")
-var searchTermEl = document.getElementById("search")
- console.log("hi")
 
 
  var formSubmitHandler = function(event) {
      event.preventDefault();
 
-     var searchTerm = searchTermEl.value.trim();
+     var searchTerm = cityInputEl.value.trim();
 
      if (searchTerm) {
          getCity(searchTerm);
 
          loc.textContent = '';
-         searchTermEl.value = '';
+         cityInputEl.value = '';
      } else {
          alert('Please enter a valid City')
      }
@@ -48,13 +46,22 @@ var searchTermEl = document.getElementById("search")
       .catch(function (error) {
         alert('Unable to connect to OpenWeatherAPI');
       });
-
+/*
       loc.textContent = (data.name)
       tempValue.textContent = 'Temperature: '(data.main.temp)
       humidity.textContent = 'Humidity: '(data.main.humidity)
       windSpeed.textContent = 'Windspeed: '(data.wind.speed)
-      uv.textContent = "UV"
+      uv.textContent = "UV" */
   };
 
-  document.getElementById("searchbtn").addEventListener('click', formSubmitHandler);
+  var displayCity = function() {
+      loc.textContent = searchTerm;
+      tempValue.textContent = 'Temperature: '(data.main.temp)
+      humidity.textContent = 'Humidity: '(data.main.humidity)
+      windSpeed.textContent = 'Windspeed: '(data.wind.speed)
+      uv.textContent = "UV" 
+
+  }
+
+  userFormEl.addEventListener('submit', formSubmitHandler);
     
