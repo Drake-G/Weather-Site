@@ -1,0 +1,54 @@
+
+
+:root {
+    --primary: #d2b6ff;
+    --secondary: #5bffd0;
+    --tertiary: #43ffff;
+    --light-dark: #7197ff;
+    --dark: #9054f0;
+    --border-radius: .3rem;
+  } 
+
+  
+header {
+   font-family: 'Staatliches', cursive;
+   font-size: 40px;
+   text-align: center;
+   width: 100%;
+   background-image: linear-gradient(to left, rgb(255, 138, 255), rgb(116, 116, 255))
+}
+
+.btn {
+    font-size: 1.3rem;
+    text-decoration:none;
+    padding: 6px 5px;
+    width: 100%;
+    display: block;
+    margin: 5px 0;
+    border-radius: var(--border-radius);
+    color: var(--primary);
+    border: none;
+    outline: none;
+    background-color: var(--light-dark);
+    box-shadow: 3px 3px var(--dark);
+    transform: translate(-1px, -1px);
+}
+
+.btn:hover {
+    color: var(--primary);
+    background-color: var(--tertiary);
+    transform: translate(0, 0);
+    box-shadow: 2px 2px var(--dark);
+  }
+
+  .card {
+    margin: 10px 0 20px 0;
+    border: 3px solid var(--dark);
+    border-radius: var(--border-radius);
+  }
+  
+  div #search {
+    margin: 10px 0 20px 0;
+    border: 3px solid var(--tertiary);
+    border-radius: var(--border-radius);
+  }
